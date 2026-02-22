@@ -7,7 +7,7 @@
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/PokeMMO-AppImage)](https://github.com/pkgforge-dev/PokeMMO-AppImage/releases/latest)
 
 <p align="center">
-  <img src="https://github.com/pkgforge-dev.png" width="128" />
+  <img src="https://github.com/PokeMMO.png" width="128" />
 </p>
 
 
