@@ -7,7 +7,9 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
+    gtk3           \
     jre-openjdk    \
+    libdecor       \
     openssl        \
     pipewire-audio \
     pipewire-jack
