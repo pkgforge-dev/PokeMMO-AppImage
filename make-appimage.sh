@@ -12,6 +12,7 @@ export ICON=/usr/share/pixmaps/pokemmo-launcher.png
 export DESKTOP=/usr/share/applications/pokemmo.desktop
 export STARTUPWMCLASS=com.pokemmo.PokeMMO
 export DEPLOY_OPENGL=1
+export DEPLOY_PIPEWIRE=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/pokemmo-launcher \
