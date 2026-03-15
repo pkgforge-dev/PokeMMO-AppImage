@@ -14,7 +14,11 @@ export STARTUPWMCLASS=com.pokemmo.PokeMMO
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/pokemmo-launcher
+quick-sharun /usr/bin/pokemmo-launcher \
+    /usr/lib/jvm/java*/bin \
+    /usr/lib/jvm/java*/conf \
+    /usr/lib/jvm/java*/legal \
+    /usr/lib/jvm/java*/lib
 
 # Additional changes can be done in between here
 
