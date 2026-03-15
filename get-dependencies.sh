@@ -6,7 +6,9 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm jre-openjdk
+pacman -Syu --noconfirm \
+    jre-openjdk \
+    openssl
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
