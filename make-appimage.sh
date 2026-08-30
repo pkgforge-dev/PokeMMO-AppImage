@@ -17,6 +17,7 @@ export DEPLOY_PULSE=1
 # Deploy dependencies
 quick-sharun /usr/bin/pokemmo-launcher \
     /usr/lib/jvm/java* \
+    /usr/lib/libopenal.so* \
     /usr/bin/openssl
 
 echo 'ANYLINUX_DO_NOT_LOAD_LIBS=libpipewire-0.3.so*:${ANYLINUX_DO_NOT_LOAD_LIBS}' >> ./AppDir/.env
