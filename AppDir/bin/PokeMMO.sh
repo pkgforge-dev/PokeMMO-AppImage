@@ -5,9 +5,6 @@ cd "$(dirname "$0")" || exit 1
 
 OS=$(uname -s)
 case "$OS" in
-    Darwin)
-        OS_DIR="macos"
-        ;;
     Linux)
         OS_DIR="linux"
         ;;
