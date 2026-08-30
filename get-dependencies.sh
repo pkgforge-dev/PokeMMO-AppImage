@@ -17,7 +17,7 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
 # Comment this out if you need an AUR package
-make-aur-package pokemmo
+#make-aur-package pokemmo
 
 # If the application needs to be manually built that has to be done down here
 
