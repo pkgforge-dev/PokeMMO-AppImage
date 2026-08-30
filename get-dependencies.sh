@@ -8,6 +8,7 @@ echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     jre-openjdk \
+    openal      \
     pango
 
 echo "Installing debloated packages..."
