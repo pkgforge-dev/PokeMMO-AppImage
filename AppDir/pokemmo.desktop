@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=PokeMMO
+Comment=MMO based on the Pokémon Universe
+Exec=pokemmo-launcher
+Keywords=game;adventure;multiplayer;online;emulator;monster;battle;mmo;mmorpg
+Terminal=false
+Type=Application
+Icon=pokemmo-launcher
+StartupWMClass=com.pokemmo.PokeMMO
+Categories=Game;AdventureGame;Emulator;RolePlaying;
