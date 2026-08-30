@@ -3,7 +3,8 @@
 set -eu
 
 ARCH=$(uname -m)
-VERSION=$(pacman -Q pokemmo | awk '{print $2; exit}')
+#VERSION=$(pacman -Q pokemmo | awk '{print $2; exit}')
+VERSION=4.0
 export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
@@ -15,7 +16,7 @@ export DEPLOY_OPENGL=1
 export DEPLOY_PULSE=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/pokemmo-launcher \
+quick-sharun ./AppDir/bin/pokemmo-launcher \
     /usr/lib/jvm/java* \
     /usr/lib/libopenal.so* \
     /usr/bin/openssl
