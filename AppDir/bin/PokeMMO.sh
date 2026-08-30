@@ -1,7 +1,29 @@
 #!/bin/sh
 
-# Change directory to the directly containing PokeMMO.sh
-cd "$(dirname "$0")" || exit 1
+# This wrapper lives in $APPDIR/bin and shadows the game's own PokeMMO.sh via
+# PATH, so resolve the real PokeMMO installation directory here.
+# Mirrors pokemmo-launcher: a custom dir set via `-H` is stored in
+# $XDG_CONFIG_HOME/pokemmo/pokemmodir, otherwise the default of
+# $XDG_DATA_HOME/pokemmo (or $HOME/.local/share/pokemmo) is used.
+getPokemmoDir() {
+    PKMOCONFIGDIR="${XDG_CONFIG_HOME:-$HOME/.config}/pokemmo"
+    if [ -f "$PKMOCONFIGDIR/pokemmodir" ]; then
+        head -n1 "$PKMOCONFIGDIR/pokemmodir"
+    elif [ -n "$XDG_DATA_HOME" ] && [ -d "$XDG_DATA_HOME" ]; then
+        echo "$XDG_DATA_HOME/pokemmo"
+    else
+        echo "$HOME/.local/share/pokemmo"
+    fi
+}
+
+POKEMMO=$(getPokemmoDir)
+if [ ! -d "$POKEMMO" ]; then
+    echo "Error: PokeMMO installation not found at $POKEMMO"
+    exit 1
+fi
+
+cd "$POKEMMO" || exit 1
+POKEMMO=$(pwd)
 
 OS=$(uname -s)
 case "$OS" in
@@ -44,4 +66,10 @@ if [ ! -x "$BINARY" ]; then
     fi
 fi
 
-exec "$APPDIR"/sharun "$BINARY"
+# When running inside the AppImage, $APPDIR is exported by AppRun.sh.
+# Fall back to deriving it from this script's own location otherwise.
+if [ -z "$APPDIR" ]; then
+    APPDIR=$(cd "$(dirname "$0")/.." && pwd)
+fi
+
+exec "$APPDIR"/sharun "$POKEMMO/$BINARY"
