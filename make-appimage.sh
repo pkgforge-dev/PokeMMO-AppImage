@@ -9,9 +9,9 @@ export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export ICON=/usr/share/pixmaps/pokemmo-launcher.png
-export DESKTOP=/usr/share/applications/pokemmo.desktop
-export STARTUPWMCLASS=com.pokemmo.PokeMMO
+#export ICON=/usr/share/pixmaps/pokemmo-launcher.png
+#export DESKTOP=/usr/share/applications/pokemmo.desktop
+#export STARTUPWMCLASS=com.pokemmo.PokeMMO
 export DEPLOY_OPENGL=1
 export DEPLOY_PULSE=1
 
